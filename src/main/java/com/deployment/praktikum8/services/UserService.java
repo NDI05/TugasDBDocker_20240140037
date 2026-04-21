@@ -40,12 +40,7 @@ public class UserService {
         return null;
     }
 
-    public User deleteUser(String id) {
-        User existingUser = userRepository.findById(id).orElse(null);
-        if (existingUser != null) {
-            userRepository.delete(existingUser);
-            return existingUser;
-        }
-        return null;
+    public void deleteUser(String id) {
+        userRepository.deleteById(id);
     }
 }
